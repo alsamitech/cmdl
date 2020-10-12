@@ -1,0 +1,8 @@
+# Files to ignore
+
+.swp
+.replit
+.cbp
+.un~
+.swo
+.swn
