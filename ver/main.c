@@ -7,7 +7,6 @@
 
 #include <stdio.h>
 #include <GL/glut.h>
-#include <saveandquit.h>
 
 // Defines
 #define HLEN 800
@@ -105,7 +104,6 @@ void keyboard(unsigned char key, int x, int y) {
 	if(key=='g'){Q[cn].r=0;Q[cn].g=1;Q[cn].b=0;}
 	if(key=='b'){Q[cn].r=0;Q[cn].g=0;Q[cn].b=l;}
 	if(key=='y'){Q[cn].r=1;Q[cn].g=1;Q[cn].b=0;}
-  if(key=='u'){saveandquit();}
 	glutPostRedisplay();
 }
 
