@@ -7,7 +7,14 @@
 
 #include <stdio.h>
 #include <GL/glut.h>
-#include <saveandquit.h>
+#include "saveandquit.h"
+#include "config.h"
+
+/*
+ *
+ *  For Efficiency's sake, this has been ported over to C.
+ *
+ **/
 
 // Defines
 #define HLEN 800
@@ -48,7 +55,6 @@ void drawQuads(){
 		glEnd();
 	}
 }
-
 
 void T_CB() {
 	glPushMatrix();
@@ -98,13 +104,13 @@ void init() {
 
 void keyboard(unsigned char key, int x, int y) {
 
-	if(key=='w'){cz=1;} if(key=='s'){cx+=1;}	// FORWARD
+	if(key==FORWARD){cz=1;} if(key=='s'){cx+=1;}	// FORWARD
 	if(key=='a'){cx-=1;} if(key=='d'){cx+=1;}	// LEFT
 	if(key=='q'){cy+=1;} if(key=='z'){cy-=1;}	// UP
-	if(key=='r'){Q[cn].r=1;Q[cn].g=0;q[cn].b=0;}
-	if(key=='g'){Q[cn].r=0;Q[cn].g=1;Q[cn].b=0;}
-	if(key=='b'){Q[cn].r=0;Q[cn].g=0;Q[cn].b=l;}
-	if(key=='y'){Q[cn].r=1;Q[cn].g=1;Q[cn].b=0;}
+	if(key== REDKEY ){Q[cn].r=1;Q[cn].g=0;q[cn].b=0;}
+	if(key== GREENKEY ){Q[cn].r=0;Q[cn].g=1;Q[cn].b=0;}
+	if(key== BLUEKEY ){Q[cn].r=0;Q[cn].g=0;Q[cn].b=l;}
+	if(key== YELLOWKEY ){Q[cn].r=1;Q[cn].g=1;Q[cn].b=0;}
   if(key=='u'){saveandquit();}
 	glutPostRedisplay();
 }
